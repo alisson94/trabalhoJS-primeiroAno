@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Siga o oãrdaP</title>
+	<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+		body{
+			font-family: Arial;
+			background-color: #dedede;
+		}
+		div{
+			position: relative;
+			top: 30px;
+			background-color: #fff;
+			box-shadow: 2px 2px 15px #777;
+			padding: 15px;
+			width: 300px;
+			height: 500px;
+		}
+		a{
+			text-decoration: none;
+		}
+		p{
+			font-size: 30px;
+		}
+		input{
+			position: relative;
+			top: 50px;
+			width: 250px;
+			padding: 5px;
+			border: none;
+			font-size: 15px;
+			border-bottom: 2px solid #bbb;
+			transition: all .2s;
+		}
+		input:hover{
+			border-bottom: 2px solid #0A6DE5;
+		}
+		input:focus{
+			outline: none;
+			border-bottom: 2px solid #0A6DE5;
+		}
+		p#button{
+			background-color: #fff;
+			padding: 5px;
+			color: #0A6DE5;
+			position: relative;
+			top: 350px;
+			transition: all .2s;
+			border: 1px solid #0A6DE5;
+		}
+		p#button:hover{
+			color: #fff;
+			background-color: #0A6DE5;
+		}
+		p#tempo{
+			position: relative;
+			top: 100px;
+		}
+	</style>
+</head>
+<script type="text/javascript">
+	function time(){
+		setTimeout('liberar()', 1000);
+	}
+	function liberar(){
+		var tempo = parseInt(document.getElementById('tempo').innerHTML) - 1;
+		document.getElementById('tempo').innerHTML = tempo;
+		if (tempo > 1676361) {
+			time();
+		}else{
+			document.getElementById('tempo').innerHTML = 'É zueira, pode ir';
+			document.getElementById('button').innerHTML = 'Vá meu fi';
+			document.getElementById('button').onclick = '';
+			document.getElementById('link').href = 'segredo.html';
+		}
+	}
+	function verficaSenha(){
+		if(document.getElementById('txtSenha').value == '01100001 01101000 01101110 01100101 01110011'){
+			alert('Correto! Espere a contagem terminar')
+			document.getElementById('tempo').innerHTML = '1676374';
+			time();
+		}else if(document.getElementById('txtSenha').value == 'ahnes'){
+			alert('Tente colocar em uma língua que o computador entenda');
+		}else if(document.getElementById('txtSenha').value == 'senha'){
+			alert('Olhe o título');
+		}else{
+			alert('Senha incorreta');
+		}
+	}
+
+
+	
+</script>
+<body>
+	<center>
+		<div>
+			<p>A senha é: </p>
+			<p style="color: #0A6DE5;">senha</p>	
+			<input type="text" placeholder="Digite a senha" id="txtSenha">
+			<a href="#" id="link"><p id="button" onclick="verficaSenha()">Ir</p></a>
+			<p id="tempo"></p>
+		</div>
+	</center>
+</body>
+</html>

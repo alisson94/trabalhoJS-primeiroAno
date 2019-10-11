@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			background: url('TrollFace.jpg');
+			background-size: 1280px 720px;
+			font-family: Arial;
+		}
+		p{
+			font-size: 40px;
+		}
+		img{
+			position: absolute;
+			display: none;
+		}
+		#i1{
+			top: 80px;
+			right: 50px;
+		}
+		#i2{
+			top: 7px;
+			width: 70%;
+			height: 70%;
+		}
+		#i3{
+			bottom: 10px;
+			right: 80px;
+			width: 70%;
+		}
+		#i4{
+			top: 56px;
+			left: 78px;
+			width: 70%;
+			height: 70%;
+		}
+		#i5{
+			bottom: 400px;
+			right: 80px;
+			width: 70%;
+		}
+		#i6{
+			bottom: 7px;
+			right: 30px;
+			width: 70%;
+			height: 70%;
+		}
+		#i7{
+			right: 0px;
+			top: 0px;
+		}
+		#i8{
+			top: 0px;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<script type="text/javascript">
+	time();
+	function time(){
+		setTimeout('liberar()', 1000);
+	}
+	function liberar(){
+		var tempo = parseInt(document.getElementById('tempo').innerHTML) - 1;
+		document.getElementById('tempo').innerHTML = tempo;
+		if(tempo == 1676354){
+			images();
+		}
+		time();
+	}
+	function images(){
+		var c = 0;
+		setInterval(function(){
+			if(c == 0){
+			document.getElementById('i1').style.display = 'block';
+			}
+			if(c == 1){
+				document.getElementById('i2').style.display = 'block';	
+			}
+			if(c == 2){
+				document.getElementById('i3').style.display = 'block';
+			}
+			if(c == 3){
+				document.getElementById('i4').style.display = 'block';
+			}
+			if(c == 4){
+				document.getElementById('i5').style.display = 'block';
+			}
+			if(c == 5){
+				document.getElementById('i6').style.display = 'block';
+			}
+			if(c == 6){
+				document.getElementById('i7').style.display = 'block';
+			}
+			if(c == 8){
+				document.getElementById('i8').style.display = 'block';
+			}
+			c++;
+		},300);
+	}
+</script>
+<body>
+	<p id="tempo">1676360</p>
+	<img id="i1" src="tela1.jpg">
+	<img id="i2" src="tela2.jpg">
+	<img id="i3" src="tela3.jpg">
+
+	<img id="i4" src="tela2.jpg">
+	<img id="i5" src="tela3.jpg">
+	<img id="i6" src="tela2.jpg">
+	<img id="i7" src="tela1.jpg">
+
+	<img id="i8" src="tela4.gif">
+</body>
+</html>
